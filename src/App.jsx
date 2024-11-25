@@ -19,7 +19,12 @@ function App() {
       body: JSON.stringify(user)
     })
     .then(res => res.json())
-    .then(data => console.log(data))
+    .then(data => {
+      if(data.insertedId){
+        alert("users added successfully")
+        form.reset()
+      }
+    })
     
   }
   return (
